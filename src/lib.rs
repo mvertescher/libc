@@ -147,6 +147,9 @@ cfg_if! {
 
         mod wasi;
         pub use wasi::*;
+    } else if #[cfg(target_os = "nuttx")] {
+        mod nuttx;
+        pub use nuttx::*;   
     } else {
         // non-supported targets: empty...
     }
